@@ -1,6 +1,6 @@
 /* Background */
 body {
-  background-color: #333;
+  background: #000;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -23,9 +23,9 @@ body {
   position: absolute;
   bottom: -10px;
   left: -10px;
-  background-color: #ccc;
+  background-color: #f0f0f0;
   border-radius: 50%;
-  box-shadow: 0 2px 0 #aaa, 0 4px 0 #aaa, 0 5px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 0 #ccc, 0 4px 0 #ccc, 0 5px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* Cake layers */
@@ -35,11 +35,11 @@ body {
   width: 250px;
   height: 100px;
   border-radius: 50%;
-  background-color: #553c13;
-  box-shadow: 0 2px 0px #6e4e24, 0 4px 0px #4e310f, 0 6px 0px #4c2f0d,
-    0 8px 0px #4b2e0b, 0 10px 0px #4a2d09, 0 12px 0px #492c07,
-    0 14px 0px #472b05, 0 16px 0px #462a03, 0 18px 0px #452901,
-    0 20px 0px #442800;
+  background-color: #8b4513;
+  box-shadow: 0 2px 0px #a0522d, 0 4px 0px #8b4513, 0 6px 0px #80380f,
+    0 8px 0px #75300b, 0 10px 0px #692a08, 0 12px 0px #5e2406,
+    0 14px 0px #521e04, 0 16px 0px #471803, 0 18px 0px #3c1201,
+    0 20px 0px #310c00;
 }
 
 .layer-top {
@@ -56,7 +56,7 @@ body {
 .icing {
   top: 2px;
   left: 5px;
-  background-color: #f0e4d0;
+  background-color: #fff0f5;
   width: 240px;
   height: 90px;
   border-radius: 50%;
@@ -70,8 +70,8 @@ body {
   right: 5px;
   bottom: 6px;
   left: 5px;
-  background-color: #f4e8d5;
-  box-shadow: 0 0 4px #f7ebda, 0 0 4px #f7ebda;
+  background-color: #fff5f8;
+  box-shadow: 0 0 4px #fffafe, 0 0 4px #fffafe;
   border-radius: 50%;
   z-index: -1;
 }
@@ -79,7 +79,7 @@ body {
 /* Drips */
 .drip {
   display: block;
-  background-color: #f0e4d0;
+  background-color: #fff0f5;
   position: absolute;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
@@ -112,7 +112,7 @@ body {
 
 /* Candle */
 .candle {
-  background-color: #7b020b;
+  background-color: #ff6347;
   width: 16px;
   height: 50px;
   border-radius: 8px / 4px;
@@ -130,13 +130,13 @@ body {
   width: 16px;
   height: 8px;
   border-radius: 50%;
-  background-color: #9b2a2a;
+  background-color: #ff7f50;
 }
 
 /* Flame hidden by default */
 .flame {
   position: absolute;
-  background-color: orange;
+  background-color: #ffdb58;
   width: 15px;
   height: 35px;
   border-radius: 10px 10px 10px 10px / 25px 25px 10px 10px;
@@ -146,42 +146,43 @@ body {
   z-index: 10;
   transform-origin: 50% 90%;
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 0.5s ease;
   pointer-events: none;
 }
 
 /* Flame when lit */
 .flame.show {
   opacity: 1;
-  animation: flicker 1.2s ease-in-out infinite alternate;
-  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5),
-    0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
+  animation: flicker 1.5s ease-in-out infinite alternate;
+  box-shadow: 0 0 10px rgba(255, 219, 88, 0.7), 0 0 20px rgba(255, 219, 88, 0.7),
+    0 0 60px rgba(255, 219, 88, 0.7), 0 0 80px rgba(255, 219, 88, 0.7);
 }
 
 /* Flame flicker animation */
 @keyframes flicker {
   0% {
-    transform: skewX(5deg);
-    box-shadow: 0 0 10px rgba(255, 165, 0, 0.2), 0 0 20px rgba(255, 165, 0, 0.2);
+    transform: skewX(5deg) scaleY(1.05);
+    box-shadow: 0 0 10px rgba(255, 219, 88, 0.5), 0 0 20px rgba(255, 219, 88, 0.5);
   }
   25% {
-    transform: skewX(-5deg);
+    transform: skewX(-5deg) scaleY(1);
   }
   50% {
-    transform: skewX(10deg);
+    transform: skewX(10deg) scaleY(1.08);
   }
   75% {
-    transform: skewX(-10deg);
+    transform: skewX(-10deg) scaleY(1);
   }
   100% {
-    transform: skewX(5deg);
+    transform: skewX(5deg) scaleY(1.05);
   }
 }
 
 /* Instruction text */
 .instructions {
-  color: #fff9c4;
-  font-size: 1.2rem;
+  color: #fffbe6;
+  font-size: 1.5rem;
+  font-family: "Mountains of Christmas", cursive;
   margin-top: 230px;
   text-align: center;
   position: absolute;
@@ -189,6 +190,7 @@ body {
   width: 100%;
   opacity: 1;
   transition: opacity 0.8s ease;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 .instructions.fade-out {
   opacity: 0;
@@ -218,6 +220,7 @@ body {
   width: 105px;
   border-radius: 75% 75% 70% 70%;
   position: absolute;
+  box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);
 }
 
 .balloon:before {
@@ -263,16 +266,17 @@ body {
   top: 20px;
   width: 100%;
   text-align: center;
-  color: #fff9c4;
-  font-size: 1.5rem;
-  font-family: "Courier New", monospace;
+  color: #fffbe6;
+  font-size: 1.8rem;
+  font-family: "Mountains of Christmas", cursive;
   white-space: pre-line;
   overflow: hidden;
-  border-right: 2px solid #fff9c4;
+  border-right: 2px solid #fffbe6;
   opacity: 0;
   animation: fadeIn 1s ease forwards;
   z-index: 9999;
   line-height: 1.8;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes typing {
